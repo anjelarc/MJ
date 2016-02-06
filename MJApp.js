@@ -54,6 +54,13 @@ if (Meteor.isClient) {
 	    }
   	});
 
+	Template.task.events({
+	    'click .delete': function(event) {
+	     	ItemList.remove(this._id);
+	    }
+  	});
+
+
 	Template.registerHelper('formatDate', function(createdAt) {
   		return moment(createdAt).format('MM-DD-YYYY');
 	});
