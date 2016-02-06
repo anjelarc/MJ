@@ -1,7 +1,9 @@
-/* Start Work */
 .header1{
-	background-color: #AEDBEB;
+	background-color: #566690;
 	text-align: center;
+	height:80px;
+	color: white;
+	padding-top: 20px;
 }
 
 /**************** Blog List Div *****************/
@@ -32,6 +34,42 @@
 .hr_line{
 	border-top: 1px solid #D8D8D8;
 }
+
+.blogInfo{
+	color:#686868;
+}
+
+.modify, .buttons{
+	text-align:right;
+}
+
+.buttons{
+	clear:both;
+}
+
+.saveButton, #saveButtonBottom{
+	display:none;
+}
+
+.new ul li{
+	height:30px;
+}
+
+.leftDiv{
+	width:110px;
+	float:left;
+	font-size:20px;
+	color:#566690;
+	font-style: italic;
+}
+
+.rightDiv{
+	float:left;
+}
+.newForm{
+	display:none;
+	margin:80px 0px 0px 30px;
+}
 /****************Login Container *****/
 
 #login_container { 
@@ -51,7 +89,7 @@
 #login_div{	
 	
 	height:250px;
-	margin-top:0 auto;		
+	margin-top:0 auto;	
 }
 
 .login{
