@@ -1,1 +1,61 @@
 /* Start Work */
+.header1{
+	background-color: #AEDBEB;
+	text-align: center;
+}
+
+/**************** Blog List Div *****************/
+#bloglist_div, #login_container { 
+    height: 800px;
+    margin-right:10px;   
+    margin-left:10px; 
+    float:left;    
+}
+
+#bloglist_div {
+	width:65%;
+	text-align:center;
+}
+
+#bloglist_div ul{ 
+	list-style: none ;
+}
+
+#bloglist_div p{
+	text-align: left ;
+}
+
+#bloglist_div .title {
+	font-weight: bold;
+}
+
+#list_items{
+	padding-left:50px;
+}
+/****************Login Container *****/
+
+#login_container { 
+	width:30%;
+	text-align:left;	
+}
+
+#login_container ul{ 
+	list-style: none ;
+}
+
+#login_container ul li{ 
+	list-style: none ;
+	height:25px;
+}
+
+#login_div{	
+	
+	height:250px;
+	margin-top:0 auto;		
+}
+
+.login{
+	margin: 0 auto;
+    width: 250px;
+	background-color:#D0D0D0 ;
+}
