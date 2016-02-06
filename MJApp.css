@@ -14,23 +14,23 @@
 
 #bloglist_div {
 	width:65%;
-	text-align:center;
+	text-align:left;
 }
 
 #bloglist_div ul{ 
 	list-style: none ;
 }
 
-#bloglist_div p{
-	text-align: left ;
-}
-
 #bloglist_div .title {
-	font-weight: bold;
+		font: italic bold 15px/30px Georgia, serif;
 }
 
 #list_items{
 	padding-left:50px;
+}
+
+.hr_line{
+	border-top: 1px solid #D8D8D8;
 }
 /****************Login Container *****/
 

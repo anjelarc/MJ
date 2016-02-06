@@ -6,31 +6,14 @@
   <h1 class="header1">MJ BLOG APP</h1> 
   <div id="bloglist_div">
   	<div id="list_items">
-	    <div>
+	    <div>	    	
 	    	<ul>
-	    		<li>
-	    			<p><span class="title">Title1</span></p>
-	    			<p>hjdhfksh cskjchshc jchskchfs 
-	    			jdhsjhf fjdhfjsh </p>
-	    		</li>
+	    		{{#each blogs}}		    		    			 
+	       			{{> item}}
+	    		{{/each}} 
 	    	</ul>
 	    </div>
-	    <div>
-	    	<ul>
-	    		<li>
-	    			<p><span class="title">Title1</span></p>
-	    			<p>hjdhfksh jfhkhf jdfhksj </p>
-	    		</li>
-	    	</ul>
-	    </div>
-	    <div>
-	    	<ul>
-	    		<li>
-	    			<p><span class="title">Title1</span></p>
-	    			<p>hjdhfksh jfhkdf djhfd </p>
-	    		</li>
-	    	</ul>
-	    </div>
+	   
     </div>
    </div>
    <div id="login_container">
@@ -51,4 +34,11 @@
    </div>   
 </body>
 
-
+<template name="item">
+<div>
+	<li class="title">{{title}}</li>
+	<li> Posted at {{formatDate createdAt}}</li>
+	<li><p>{{description}}</p></li>
+</div>
+<hr class="hr_line">
+</template>
