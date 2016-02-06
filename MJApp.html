@@ -4,41 +4,53 @@
 
 <body>
   <h1 class="header1">MJ BLOG APP</h1> 
-  <div id="bloglist_div">
-  	<div id="list_items">
-	    <div>	    	
-	    	<ul>
-	    		{{#each blogs}}		    		    			 
-	       			{{> item}}
-	    		{{/each}} 
-	    	</ul>
-	    </div>
-	   
-    </div>
-   </div>
-   <div id="login_container">
-   <div id="login_div">
-   <form class="login">
-   	<ul>
-        <li></li>
-        <li>Email</li>
-        <li><input type="email" name="loginEmail"></li>
-        <li>Password</li>
-        <li><input type="password" name="loginPassword"></li>
-        <li></li>
-        <li><input type="submit" value="Login"></li>
-        <li></li>
-      </ul>
-    </form>
-    </div>
-   </div>   
+   {{#if currentUser}}
+        todo
+    {{else}}
+        {{>home}}
+    {{/if}} 
+   
 </body>
+<template name="home">
+	<div id="bloglist_div">
+	  	<div id="list_items">
+		    <div>	    	
+		    	<ul>
+		    		{{#each blogs}}		    		    			 
+		       			{{> item}}
+		    		{{/each}} 
+		    	</ul>
+		    </div>
+		   
+	    </div>
+	</div>
+	<div id="login_container">
+  	 <div id="login_div">
+	  {{>login}}
+     </div>
+   </div>  
+</template>
 
 <template name="item">
-<div>
-	<li class="title">{{title}}</li>
-	<li> Posted at {{formatDate createdAt}}</li>
-	<li><p>{{description}}</p></li>
-</div>
-<hr class="hr_line">
+	<div>
+		<li class="title">{{title}}</li>
+		<li> Posted at {{formatDate createdAt}}</li>
+		<li><p>{{description}}</p></li>
+	</div>
+	<hr class="hr_line">
+</template>
+
+<template name="login">
+	 <form class="login">
+	   	<ul>
+	        <li></li>
+	        <li>User name only</li>
+	        <li><input type="Text" name="userName"></li>
+	        <li>Password</li>
+	        <li><input type="password" name="loginPassword"></li>
+	        <li></li>
+	        <li><input type="submit" value="Login"></li>
+	        <li></li>
+	      </ul>
+	    </form>
 </template>
