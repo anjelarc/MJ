@@ -19,7 +19,7 @@
 	  	<div id="list_items">
 		    <div>	    	
 		    	<ul>
-		    		{{#each blogs}}		    		    			 
+		    		{{#each blogs}}			    			 
 		       			{{> useritem}}
 		    		{{/each}} 
 		    	</ul>
@@ -65,15 +65,21 @@
 <template name="useritem">	
 		<li class="title">{{title}}</li>
 		<li class="blogInfo"> Posted at {{formatDate createdAt}}</li>
-		<li>
-			<p>{{description}}</p>
+		<li>			
 			{{>task}}
 			<hr class="hr_line">
 		</li>
 </template>
 
 <template name="task">
-	<p class="modify"><a href="#" >Update</a> | <a href="#" class="delete">Delete</a></p>
+		<p class="dispdescription" id="description_{{_id}}" >{{description}}</p>
+			<p class="updaterecord_textarea" id="descriptionUpdate_{{_id}}">
+				<textarea  id="desc_{{_id}}" name="updatedescription" cols="40" rows="5">{{description}}</textarea>
+			</p>
+	<p class="buttonDiv" id="buttonDiv_{{_id}}">	
+		<a href="#" class="update">Update</a> | <a href="#" class="delete">Delete</a>
+	</p>
+	<p class="saveupdate" id="saveupdate_{{_id}}"><a href="#" class="updatevalue">Save</a> </p>
 </template>
 
 <!--Home templates -->
@@ -97,7 +103,7 @@
    </div>  
 </template>
 <template name="item">	
-		<li class="title">{{title}}</li>
+		<li class="title">{{title}} </li>
 		<li class="blogInfo"> Posted at {{formatDate createdAt}} by {{user}}</li>
 		<li>
 			<p>{{description}}</p>

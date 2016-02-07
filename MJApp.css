@@ -39,7 +39,7 @@
 	color:#686868;
 }
 
-.modify, .buttons{
+.buttonDiv, .buttons, .saveupdate{
 	text-align:right;
 }
 
@@ -66,10 +66,16 @@
 .rightDiv{
 	float:left;
 }
+
 .newForm{
 	display:none;
 	margin:80px 0px 0px 30px;
 }
+
+.updaterecord_textarea, .saveupdate{
+	display:none;
+}
+
 /****************Login Container *****/
 
 #login_container { 
@@ -90,10 +96,4 @@
 	
 	height:250px;
 	margin-top:0 auto;	
-}
-
-.login{
-	margin: 0 auto;
-    width: 250px;
-	background-color:#D0D0D0 ;
 }
