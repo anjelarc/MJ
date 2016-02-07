@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <h1 class="header1">MJ blog app</h1>
+  <h1 class="header">MJ blog app</h1>
    {{#if currentUser}}
         {{>userPage}}
     {{else}}
@@ -13,11 +13,12 @@
 </body>
 
 
+<!--  User page templates  -->
 
 <template name="userPage">
 	<div id="bloglist_div">
 	  	<div id="list_items">
-		    <div>	    	
+	    <div>	    	
 		    	<ul>
 		    		{{#each blogs}}			    			 
 		       			{{> useritem}}
@@ -52,7 +53,7 @@
 					<li>
 						<div class="leftDiv">Description: </div>
 						<div class="rightDiv">
-						 	<textarea id ="newDescription" name="description" cols="40" rows="5">	</textarea>
+						 	<textarea id ="newDescription" name="description" cols="40" rows="5"></textarea>
 						 </div>
 					</li>
 				</ul>
@@ -103,10 +104,10 @@
    </div>  
 </template>
 <template name="item">	
-		<li class="title">{{title}} </li>
-		<li class="blogInfo"> Posted at {{formatDate createdAt}} by {{user}}</li>
-		<li>
-			<p>{{description}}</p>
-			<hr class="hr_line">
-		</li>
+	<li class="title">{{title}} </li>
+	<li class="blogInfo"> Posted at {{formatDate createdAt}} by {{user}}</li>
+	<li>
+		<p>{{description}}</p>
+		<hr class="hr_line">
+	</li>
 </template>

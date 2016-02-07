@@ -6,8 +6,7 @@ if (Meteor.isClient) {
 	  	blogs:function(){
 	      	return ItemList.find();
 	      }
-	}); 	
-	 
+	}); 	 
 
 	Accounts.ui.config({
 		passwordSignupFields: "USERNAME_ONLY"
@@ -22,23 +21,21 @@ if (Meteor.isClient) {
 	});  
 	
   	Template.userPage.events({
-  		'click .createButton': function () {
-	      $('.createButton').hide();
-	      $('.saveButton').show();
-	      $('.newForm').show();	      	      
+
+  		'click .createButton': function () {  		  
+  		  toggleFormButtons();  		  	           	      
 	    },
 
 	    'click .saveButton': function() {
-	      $('.createButton').show();
-	      $('.saveButton').hide();
-	      $('#saveButtonBottom').click();
-	      $('.newForm').hide();    
+	      toggleFormButtons();
+	      $('#saveButtonBottom').click();  
 	    },
 
 	    'click #saveButtonBottom': function() {
 	     	var title=$('#title').val();
 	     	var description=$('#newDescription').val();
 	     	var currentuser = Meteor.user().username;
+
 	     	 ItemList.insert({
 	     	 	title: title,
 	     	 	description: description,
@@ -60,6 +57,7 @@ if (Meteor.isClient) {
 	    	var title = this.title;
 	    	var description= $('#desc_' + id).val().trim();
 	    	var currentuser = Meteor.user().username;
+
 	     	ItemList.update(this._id,{$set:{
 	     		title: title,
 	     	 	description: description,
@@ -89,10 +87,15 @@ if (Meteor.isClient) {
 }
 
 toggleButtonDiv = function(id)
-{
-	console.log('test');
+{	
 	$('#description_' + id).toggle();
 	$('#descriptionUpdate_' + id).toggle();
 	$('#buttonDiv_' + id).toggle();
 	$('#saveupdate_' + id).toggle();
 };
+
+toggleFormButtons = function(){
+	$('.createButton').toggle();
+	$('.saveButton').toggle();
+	$('.newForm').toggle();	
+}; 
